@@ -7,10 +7,10 @@
 
 
 TEAM INFO:
- LEAD  : Sridaran Sivakumar
- MATE 1: Priyadharshan Raja
- MATE 2: Abimanyu Nachiappan
- MATE 3: Ragul Kandasamy 
+ LEAD  : Sridaran Sivakumar,
+ MATE 1: Priyadharshan Raja,
+ MATE 2: Abimanyu Nachiappan,
+ MATE 3: Ragul Kandasamy. 
 
 PROJECT STATUS: 
 Current Phase - Brainstorming
