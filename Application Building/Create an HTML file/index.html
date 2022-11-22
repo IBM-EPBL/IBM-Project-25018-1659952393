@@ -1,0 +1,116 @@
+<!DOCTYPE html >
+<head>
+  <title>Predict the Price</title>
+  <style>
+    body {
+  height: 100%;
+  margin: 0;
+  background-image: url("crudeoil.jpg");
+  height: 100%; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.btn {
+  /*position: absolute;*/
+  top: 50%;
+  left: 50%;
+  /*transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);*/
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 16px;
+  /* padding: 16px 50px; */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+.demo{
+  align: center;
+  padding-top: 200px;
+  padding-left: 500px;
+}
+.demo1{
+  color: white;
+  font-size: 50px;
+}
+.demo2{
+  padding-left: 100px;
+}
+.demo3{
+  color: white;
+}
+p{
+  font-size: 20px;
+}
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #f0eef8 0%,
+    #44107a 29%,
+    #1391ff 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.neon {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px #000000;
+}
+
+  </style>  
+</head>
+
+<body>
+ <div class="demo" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3 class="animate-charcter"> Crude Price Prediction</h3>
+      </div>
+    </div>
+  </div>
+
+    <form action="{{ url_for('getprediction')}}"method="POST">
+    <div class="demo2">
+    	<input type="text"  name="end" placeholder="YYYY-MM-DD" required="required" />
+        <button class="btn"type="submit" class="btn btn-primary btn-block btn-large">Get Prediction</button>
+      </div>
+    </form>
+
+   <br>
+   <br>
+   <div class="container">
+    <h1 class="neon">The predicted value: {{ output }} </h1>
+  </div>
+  
+ </div>
+
+
+</body>
+</html>
