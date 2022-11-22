@@ -1,61 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Predict the Price</title>
+  <style>
+    body {
+  height: 100%;
+  margin: 0;
+  background-image: url("crudeoil.jpg");
+  height: 100%; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.btn {
+  /*position: absolute;*/
+  top: 50%;
+  left: 50%;
+  /*transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);*/
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 16px;
+  /* padding: 16px 50px; */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+.demo{
+  align: center;
+  padding-top: 200px;
+  padding-left: 500px;
+}
+.demo1{
+  color: white;
+  font-size: 50px;
+}
+.demo2{
+  padding-left: 100px;
+}
+.demo3{
+  color: white;
+}
+p{
+  font-size: 20px;
+}
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #f0eef8 0%,
+    #44107a 29%,
+    #1391ff 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.neon {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px #000000;
+}
+
+  </style>  
 </head>
+
 <body>
-
-    <div class="main">
-        <div class="navbar">
-            <div class="icon">
-                <h2 class="logo">CRUDE OIL</h2>
-            </div>
-
-            <div class="menu">
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                </ul>
-            </div>
-
-            <div class="search">
-                <input class="srch" type="search" name="" placeholder="Type To text">
-                <a href="#"> <button class="btn">Search</button></a>
-            </div>
-
-        </div> 
-        <div class="content">
-            <h1>Crude Oil<br><span>Price Prediction</span><br></h1>
-            <p class="par"> Crude oil means a mixture of hydrocarbons that exists in liquid phase in<br> 
-                natural underground reservoirs and remains liquid <br>at atmospheric pressure 
-                after passing through <br>surface separating facilities.</p>
-
-                <button class="cn"><a href="register.html">JOIN US</a></button>
-
-                <div class="form">
-                    <h2>Login Here</h2>
-                    <input type="email" name="email" placeholder="Enter Email Here">
-                    <input type="password" name="" placeholder="Enter Password Here">
-                    <button class="btnn"><a href="#">Login</a></button>
-
-                    <p class="link">Don't have an account<br>
-                    <a href="#">Sign up </a> here</a></p>
-                    <p class="liw">Log in with</p>
-
-                    <div class="icons">
-                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
-                    </div>
-
-                </div>
-                    </div>
-                </div>
-        </div>
+ <div class="demo" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3 class="animate-charcter"> Crude Price Prediction</h3>
+      </div>
     </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  </div>
+
+    <form action="{{ url_for('getprediction')}}"method="POST">
+    <div class="demo2">
+    	<input type="text"  name="end" placeholder="YYYY-MM-DD" required="required" />
+        <button class="btn"type="submit" class="btn btn-primary btn-block btn-large">Get Prediction</button>
+      </div>
+    </form>
+
+   <br>
+   <br>
+   <div class="container">
+    <h1 class="neon">The predicted value: {{ output }} </h1>
+  </div>
+  
+ </div>
+
+
 </body>
 </html>
